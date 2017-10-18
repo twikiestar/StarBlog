@@ -12,6 +12,7 @@ use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
+use frontend\models\EntryForm;
 
 /**
  * Site controller
@@ -95,6 +96,27 @@ class SiteController extends Controller
             ]);
         }
     }
+    public function actionSay($message='Hemllo')
+    {
+        $message = 'Helloooooo';
+        return $this->render('say',['message' => $message] );
+
+    }
+    public function actionEntry()
+    {
+        $mod = new EntryForm;
+        if($mod->load(Yii::$app->request->post() ) && $mod->validate() )
+            {
+                //在这里验证数据
+
+                
+                return $this->render( 'entry-confirm' , ['mod'=>$mod] );
+            }else{
+
+                return $this->render( 'entry' , ['mod' => $mod] );
+                 }         
+
+        }
 
     /**
      * Logs out the current user.
