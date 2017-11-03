@@ -1,2 +1,8 @@
 runtime
 /advanced/frontend
+/advanced/common/config/main-local.php
+/advanced/common/config/params-local.php
+/advanced/backend/config/main-local.php
+/advanced/backend/config/params-local.php
+/advanced/frontend/config/main-local.php
+/advanced/frontend/config/params-local.php
